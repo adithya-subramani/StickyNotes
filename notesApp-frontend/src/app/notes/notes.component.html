@@ -1,0 +1,21 @@
+<section class="everything" class="vh-100 bg-image" *ngIf="!selected">
+    <div class="optionBar">
+        <div class="stickyNote-title">StickyNotes</div>
+        <button class="addNote-btn" (click)="addNote()"><h1 class="plus-sign">+</h1></button>
+        <button class="logout-btn" (click)="logOut()"><h1 class="plus-sign">LOG OUT</h1></button>
+    </div>
+    <div class="notesContainer">
+        <div class="noteCard" [ngStyle]="{backgroundColor:randomColor(n.id)}" *ngFor="let n of notes" (click)="selectNote(n.id,n.notetitle,n.notecontent)">
+            <div class="noteTitle"><b>{{n.notetitle}}</b></div>
+            <div class="noteContent">{{n.notecontent}}</div>
+        </div>
+    </div>
+    <div class="isEmpty" width="140px" *ngIf="blankNote">
+        <div class="alert alert-danger alert-dismissable">
+            <a (click)="blankNote=false" style="text-decoration: none;cursor: pointer;color: red;padding-right: 12px;"class="close" data-dismiss="alert" aria-label="close">×</a>
+            <strong>Oops! You don't have any notes. Click on the top right button to create a new note.</strong>
+        </div>
+    </div>
+</section>
+<app-note-details *ngIf="selected" (backEvent)="backToAll($event)" 
+[passedDet]="noteDetails" [isNew]="newNote"></app-note-details>

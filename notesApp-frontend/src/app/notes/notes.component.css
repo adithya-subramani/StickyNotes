@@ -1,0 +1,111 @@
+.optionBar{
+    height: 30px;
+}
+
+.stickyNote-title{
+    margin: 14px 0px 14px 14px;
+    color: white;
+    font-size: 40px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.notesContainer{
+    display:flex;
+    margin: 40px;
+}
+
+.noteCard{
+    cursor: pointer;
+    margin: 8px;
+    background-color: aquamarine;
+    width: 260px;
+    height: 150px;
+    border-radius: 20px;
+    border: 2px solid black;
+    display: -webkit-box;   
+    -webkit-line-clamp: 3;   
+    -webkit-box-orient: vertical;     
+    overflow: hidden; 
+    /* transition: transform .3s ease-in-out; */
+}
+
+.notesContainer:hover > .noteCard:not(:hover) {
+    filter: blur(4px);
+}
+
+.noteCard:hover{
+    transform: scale(1.1);
+}
+
+.noteTitle{
+    margin: 10px;
+    font-size: 27px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.noteContent{
+    margin-left: 10px;
+    margin-bottom: 15px;
+    margin-right: 10px;
+    font-size: 18px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.addNote-btn{
+    position: fixed;
+    left: 92%;
+    top: -15%;
+    width: 300px;
+    height: 300px;
+    border: 0px;
+    background-color: gold;
+    border-radius: 100%;
+    justify-content: left;
+    display: flex;
+    filter: brightness(1.1);
+    transition: transform .7s ease-in-out;
+}
+
+.addNote-btn h1{
+    padding: 110px 0px 0px 65px;
+    font-size: 120px;
+}
+
+.addNote-btn:hover{
+    background-color: goldenrod;
+    transform: scale(1.1) rotate(360deg);
+}
+
+.logout-btn{
+    position: fixed;
+    left: 94%;
+    top: 88%;
+    width: 200px;
+    height: 200px;
+    border: 0px;
+    background-color: red;
+    border-radius: 100%;
+    justify-content: left;
+    display: flex;
+    filter: brightness(1.1);
+    transition: transform .7s ease-in-out;
+}
+
+.logout-btn:hover{
+    background-color: rgb(255, 95, 3);
+    transform: scale(1.1) rotate(360deg);
+}
+
+.logout-btn h1{
+    padding: 25px 110px 110px 30px;
+    font-size: 30px;
+}
+
+.isEmpty{
+    display: inline-grid;
+    align-items: center;
+    width: 400px;
+    left: 750px;
+    top: 200px;
+    position: relative;
+    font-size: 25px;
+}
