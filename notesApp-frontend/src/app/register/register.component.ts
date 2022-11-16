@@ -25,14 +25,12 @@ export class RegisterComponent implements OnInit {
   userN!:string;
 
   regSub(n:string,un:string,pw:string){
-    for(let i=0;i<this.users.length;i++){
-      if(this.users[i].username===un){
-        // this.isLoggedIn=true;
-        // this.userN=un;
-        // this.rest.setUser(un);
-        // this.router.navigate(['/notes']);
-        this.nonUniq=true;
-        break;
+    if(this.u_id!=0){
+      for(let i=0;i<this.users.length && this.u_id!=0 ;i++){
+          if(this.users[i].username===un){
+            this.nonUniq=true;
+            break;
+          }
       }
     }
     if(this.nonUniq==false){

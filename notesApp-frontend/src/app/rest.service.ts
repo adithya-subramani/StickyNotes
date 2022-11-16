@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable,isDevMode } from '@angular/core';
 
 @Injectable({
   providedIn: 'root'
@@ -15,5 +15,11 @@ export class RestService {
   }
   removeUser(){
     localStorage.setItem('user',"");
+  }
+  getCurrUrl(){
+      if (isDevMode()) {
+        return 'http://localhost:3000';
+      }
+      return '';
   }
 }

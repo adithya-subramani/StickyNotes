@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-mongoose.connect("mongodb://127.0.0.1:27017/stickynotes").then(() => {
+mongoose.connect("mongodb+srv://adithya12:yo8pAxU3cB9j1VCJ@cluster0.3u47byj.mongodb.net/?retryWrites=true&w=majority").then(() => {
   console.log("db connection established...");
 });
 
