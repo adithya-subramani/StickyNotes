@@ -36,7 +36,15 @@ export class NotesComponent implements OnInit {
   }
 
   backToAll(eve:boolean){
-    this.ngOnInit();
+    if(!this.rest.getUser() || this.rest.getUser()==="") this.router.navigate(['/login']);
+    this.selected=false;
+    this.newNote=false;
+    this.noteDetails={'id':0,'notetitle':"",'notecontent':"",'owner':this.rest.getUser()};
+    this.noteservice.getNotes(this.rest.getUser()).subscribe({
+      next:(data)=>{this.notes=data,console.log(data),console.log(this.notes),this.noteDetails.id=this.notes.length+1,
+        console.log(this.noteDetails.id),this.blankNote=(this.noteDetails.id<=1)},
+      error:(err)=>this.err=err
+    })
   }
   addNote(){
     this.newNote=true;
@@ -57,6 +65,5 @@ export class NotesComponent implements OnInit {
         console.log(this.noteDetails.id),this.blankNote=(this.noteDetails.id<=1)},
       error:(err)=>this.err=err
     })
-    // if(this.noteDetails.id<=1) this.blankNote=true;
   }
 }

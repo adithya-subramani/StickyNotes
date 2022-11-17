@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-mongoose.connect("mongodb+srv://adithya12:yo8pAxU3cB9j1VCJ@cluster0.3u47byj.mongodb.net/?retryWrites=true&w=majority").then(() => {
+mongoose.connect(process.env.MONGO_ATLAS_URI).then(() => {
   console.log("db connection established...");
 });
 

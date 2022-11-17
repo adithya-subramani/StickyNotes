@@ -14,7 +14,7 @@ export class RegisterComponent implements OnInit {
   constructor(private rest:RestService,private router:Router,
     private formBuilder: FormBuilder,private auth:AuthService) { }
   
-  public users!:any[];
+  public users:any[]=[];
   u_id:number=0;
   err!:any;
 
